@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Untitled</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>stroopdata</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -12124,9 +12124,18 @@ From histogram plots, although both graphs visually appear somewhat positively s
 <p><strong>standard deviation</strong>, sd = 4.86</p>
 <p>standard error of the difference, SE(dbar) = sd/√n = 4.86/√24 = 0.99</p>
 <p><strong>t-statistic</strong>, T = dbar/SE(dbar) = 7.964/0.99 = 8.04 on 23df</p>
+<ul>
+<li><p><strong>Why is your p-value positive? We are doing congruent is less than incongruent, so it should be congruent - incongruent, correct?</strong></p>
+<p>Because as per our null hypothesis,
+μi ≤ μc (μi - population mean of incongruent values, μc - population mean of congruent values)
+And based on our null hypothesis we calculated Point Estimates and standard deviation.
+(Please refer corrected values from "stroopdata_processed.csv")</p>
+<p><strong>t-critical value</strong>, For α level 0.5 = +-2.074</p>
+</li>
+</ul>
 <p>t-distribution with n-1 degrees of freedom (df = 23). Using the t-distribution table to find p-value...</p>
 <p>The value of <strong>p &lt; 0.0001</strong>. The result is significant at p &lt; 0.05%</p>
-<p>__Result</p>
+<p><strong>Result</strong></p>
 <p>Reject the null hypothesis, the word/colour incongruent does cause a greater time response</p>
 <p><strong>Conclusion</strong></p>
 <p>The results match my expectations.</p>
@@ -12206,6 +12215,20 @@ From histogram plots, although both graphs visually appear somewhat positively s
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
+<span class="n">call</span><span class="p">([</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;nbconvert&#39;</span><span class="p">,</span> <span class="s1">&#39;stroopdata.ipynb&#39;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
